@@ -94,6 +94,7 @@ const NavItem = styled.button`
 	color: #fff;
 	background: transparent;
 	cursor: pointer;
+	outline: none;
 
 	@media screen and (max-width: 640px) {
 		margin: 0px 6px;
