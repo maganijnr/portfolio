@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
 import FormInput from "../atoms/FormInput";
 import FormTextArea from "../atoms/FormTextArea";
 import ConatinerWrapper from "../molecules/ConatinerWrapper";
+import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
-	const [msg, setMsg] = useState("");
+	const [message, setMessage] = useState("");
+	const form = useRef();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		console.log(name, email, msg);
+		emailjs
+			.sendForm(
+				process.env.REACT_APP_EMAIL_SERVICE_ID,
+				process.env.REACT_APP_EMAIL_DEFAULT_TEMPLATE,
+				form.current,
+				process.env.REACT_APP_EMAIL_PUBLIC_KEY
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+					setName("");
+					setEmail("");
+					setMessage("");
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
 	};
 
 	return (
@@ -20,7 +39,7 @@ const ContactSection = () => {
 			<ConatinerWrapper>
 				<H3>Contact Me</H3>
 				<P>Got any project for me or a job?</P>
-				<FormBody onSubmit={handleSubmit}>
+				<FormBody onSubmit={handleSubmit} ref={form}>
 					<H2>What do you have for me?</H2>
 					<FormInput
 						name="name"
@@ -38,11 +57,11 @@ const ContactSection = () => {
 					/>
 
 					<FormTextArea
-						name="msg"
+						name="message"
 						type="text"
-						placeholder="What's do you have for me?"
-						value={msg}
-						handleChange={(e) => setMsg(e.target.value)}
+						placeholder="What do you have for me?"
+						value={message}
+						handleChange={(e) => setMessage(e.target.value)}
 					/>
 					<YellowButton type="submit">Submit</YellowButton>
 				</FormBody>
