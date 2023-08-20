@@ -23,9 +23,9 @@ function App() {
 				<Element name="about">
 					<AboutSection />
 				</Element>
-				<Element name="contact">
+				{/* <Element name="contact">
 					<ContactSection />
-				</Element>
+				</Element> */}
 				<SocialSection />
 			</AppWrapper>
 		</div>

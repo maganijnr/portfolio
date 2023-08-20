@@ -32,7 +32,7 @@ const Navbar = () => {
 						>
 							<NavItem>About</NavItem>
 						</Link>
-						<Link
+						{/* <Link
 							to="contact"
 							spy={true}
 							smooth={true}
@@ -40,7 +40,7 @@ const Navbar = () => {
 							duration={500}
 						>
 							<NavItem>Contact</NavItem>
-						</Link>
+						</Link> */}
 					</NavItems>
 				</HeaderContainer>
 			</ConatinerWrapper>

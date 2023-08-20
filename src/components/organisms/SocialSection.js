@@ -4,6 +4,10 @@ import { BsInstagram, BsTwitter, BsLinkedin, BsGithub } from "react-icons/bs";
 const SocialSection = () => {
 	return (
 		<SocialBody>
+			<ContactDiv className="">
+				<h2>maganijoshua25@gmail.com</h2>
+				<h2>+234 8189709386</h2>
+			</ContactDiv>
 			<SocialContainer>
 				<Icon>
 					<a
@@ -53,6 +57,7 @@ const SocialBody = styled.div`
 	width: 100%;
 	height: 80px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 `;
@@ -61,6 +66,18 @@ const SocialContainer = styled.div`
 	display: flex;
 	align-items: center;
 `;
+
+const ContactDiv = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 20px;
+
+	h2{
+		color: #dff348;
+		font-size: 12px;
+	}
+`
 
 const Icon = styled.span`
 	cursor: pointer;
