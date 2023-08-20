@@ -39,7 +39,7 @@ const ContactSection = () => {
 			<ConatinerWrapper>
 				<H3>Contact Me</H3>
 				<P>Got any project for me or a job?</P>
-				<FormBody onSubmit={handleSubmit} ref={form}>
+				{/* <FormBody onSubmit={handleSubmit} ref={form}>
 					<H2>What do you have for me?</H2>
 					<FormInput
 						name="name"
@@ -64,7 +64,7 @@ const ContactSection = () => {
 						handleChange={(e) => setMessage(e.target.value)}
 					/>
 					<YellowButton type="submit">Submit</YellowButton>
-				</FormBody>
+				</FormBody> */}
 			</ConatinerWrapper>
 		</ContactBody>
 	);
@@ -75,7 +75,6 @@ export default ContactSection;
 const ContactBody = styled.div`
 	padding: 20px 0px 20px;
 	background: #dff348;
-	min-height: 40vh;
 
 	@media screen and (max-width: 768px) {
 		padding: 40px 0px 40px;
