@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ConatinerWrapper from "../molecules/ConatinerWrapper";
 import DeveloperImage from "../../assets/developer.svg";
-import RESUME from "../../assets/Joshua_Magani_CV.pdf";
+import RESUME from "../../assets/Joshua Magani CV.pdf";
 
 const HeroSection = () => {
 	return (
