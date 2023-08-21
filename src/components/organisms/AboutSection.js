@@ -119,7 +119,7 @@ const StackDiv = styled.div`
 
 const StackItem = styled.div`
 	border: 1px dashed #f26255;
-	width: 100px;
+	width: 140px;
 	display: flex;
 	flex-direction: column;
 	padding: 5px 8px;
